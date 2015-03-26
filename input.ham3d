@@ -1,0 +1,62 @@
+Mach=0.8
+alpha=0.0
+beta=0.0
+rey=50
+scheme=line-Gauss-Seidel
+time integration=bdf1
+order=1
+timeacc=0
+nsteps=1000
+nwrite=100
+dt=0.01
+CFL=20
+msweep=1
+visc=0
+testcase=0
+irest=0
+nrest=200
+output=1
+
+////////////////////////////////////
+/////// input description //////////
+////////////////////////////////////
+order 1 :  
+order 3 : muscl
+order 5 : weno (not implemented yet)
+------------------------------------
+alpha = pitch angle
+beta  = sideslip angle
+-----------------------------------
+scheme for inversion-
+1. euler
+2. rk3
+3. ADI 
+4. Gauss-Seidel (not implemented yet)
+5. line-Gauss-Seidel 
+6. DADI
+--------------------------------------
+time integration:
+1. bdf1
+2. bdf2
+-------------------------------------
+timeacc:
+1. 0
+2. 1
+--------------------------------------
+nwrite : write output.plt at the iteration
+msweep : number of sweep for implicit method
+-------------------------------------
+visc:
+1. 0(inviscid)
+2. 1(viscid) not yet provided
+-------------------------------------
+testcase : 1. isentropic vortex (periodic bc)
+           0. solid bc (inviscid wall bc)
+           2. 3D wing (inviscid wall + periodic bc)
+--------------------------------------
+nstrand : same number for "strand layers" in grid generation.
+------------------------------------------------------------
+output : 0. default -> rho,rhou,rhov,rhow,rhoE
+         1. new     -> rho, u , v , w , p 
+-----------------------------------------------------------
+/////////////////////////////
